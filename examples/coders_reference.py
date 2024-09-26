@@ -17,8 +17,8 @@ my_str = "Hello, world!"
 my_int = 3
 my_float = 3.1415926
 my_bool = True                  # or False
-my_list = [1, 2, 3, 4]
-my_tuple = (1, 2, 3, 4)         # same as a list, but can't be modified
+my_list = [1, 2, 3, 4, 3]
+my_tuple = (1, 2, 3, 4, 3)      # same as a list, but can't be modified
 my_set = {1, 2, 3, 4}           # No order, can only contain 1 of each item
 my_dictionary = {"Shark": "Grey",
                  "Bear": "Brown"}
@@ -49,14 +49,19 @@ List methods
 
 first_item = my_list[0]                 # Lists start with index 0
 second_item = my_list[1]
+first_two = my_list[0:2]                # Grab indices 0 and 1 (doesn't include index 2)
+all_but_first_two = my_list[2:]         # Index 2 through the end of the list
+last_two = my_list[-2:]                 # The last 2 elements of the list
+
 my_list.append("an item")               # adds an item to the end
 my_list.extend([1, 2, 3])               # To combine two lists, use extend, not append
-my_list.pop()                           # removes the item from the end
+my_list.pop()                           # Removes the item from the end
 my_list.remove(2)                       # Removes first occurrence of item.  Raises an exception if item is not present
-my_list.copy()                          # returns a copy of the list (in case you want one to modify)
-my_list.sort()                          # sorts the list in place
-my_list.reverse()                       # reverses the order of the list in place
-l = filter(lambda x: x != 2, my_list)   # Only keep items that are != 2.
+my_list.sort()                          # Sorts the list in place
+my_list.reverse()                       # Reverses the order of the list in place
+
+my_list.copy()                          # Returns a copy of the list (in case you want one to modify)
+l1 = filter(lambda x: x != 2, my_list)  # Returns a list of items that are != 2
 l2 = [x for x in my_list if x != 2]     # Same as the above filter.
 
 """
@@ -88,21 +93,23 @@ else:                       # else is also optional, and is executed only if not
     pass
 
 """
-while loops
+loops
 """
+
+skip_one = break_out = False
 i = 1
 while i < 6:                # Run the indented code block until i >= 6.
-    if dont_add_this_time:
+    if skip_one:
         continue            # jump to the next iteration of the loop
-    elif all_done:
+    elif break_out:
         break               # breaks out of the loop
     i = i + 1
 
 
 numbers_to_add = [1, 2, 3, 4]
 total = 0
-for i in numbers_to_add:           # For each item in the list, sets i equal to that item and runs the block
-    total = total + i      # We could also have just used sum(to_add)
+for i in numbers_to_add:   # For each item in the list, sets i equal to that item and runs the block
+    total = total + i      # We could also have just used sum(numbers_to_add)
 
 
 start_at = 1
@@ -126,15 +133,15 @@ def takes_one_input(required_arg):
     return f"You passed {required_arg}"
 
 
-return_val = takes_one_input(3)
+return_val2 = takes_one_input(3)
 
 
 def takes_multiple_inputs(required_arg, optional_arg=None, optional_arg2=0):
     return f"required_arg = {required_arg}, optional_arg = {optional_arg}, optional_arg2 = {optional_arg2}"
 
 
-return_val = takes_multiple_inputs(1)
-return_val = takes_multiple_inputs(1, optional_arg2=5)
+return_val3 = takes_multiple_inputs(1)
+return_val4 = takes_multiple_inputs(1, optional_arg2=5)
 
 """
 Robotics - https://docs.pybricks.com
