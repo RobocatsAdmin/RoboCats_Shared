@@ -1,23 +1,22 @@
 """ Welcome to the RoboCats' intro to pybricks! """
 
 """
-Blocks of text like this (surrounded by triple-quotes) are "comments". They
-do not affect how the program behaves.  In this file, they wil contain
+Blocks of text like this (surrounded by triple-quotes) are called comments.
+They do not affect how the program behaves.  In this file, they wil contain
 instructions, explanations, and other useful info.
  
 The lines below are also comments, because they start with a # sign.
 When you see these, un-comment them to try out the example code.
 """
 
-# Comments like this will contain code you can try
+# Remove both the # and the space to un-comment a line
 
 """ 
 The code below calls a built-in python function named print.
 Try it - uncomment the line and press play.
 
-The quotes tell python to create a "string" of text, and the
-and the parenthesis tell python that this string of text 
-(and nothing else) is an argument to the print function.
+The quotes tell python to create a "string" of text and pass it to print. The
+arguments must be in parenthesis to show that they belong to the function call.
 """
 
 # print("Hello, world!")
@@ -29,7 +28,7 @@ errors.  Re-comment each one after trying it.
 """
 
 # print("What happens if the quotes are wrong)
-# print("What if the parens are wrong?
+# print("What if the parens are wrong?"
 # print("What if we used "quotes" inside the string")
 # print("What", "if", "there", "are multiple arguments?")
 
@@ -62,9 +61,11 @@ generate errors.   Comment them out again afterwards.
 
 # printf(another_number / 3)
 
-# print(5 + "seven")
-
 # print(5 + "7")
+
+# print(2 * "tu")
+
+
 
 """
 OK, now it's time to make the bot move.
@@ -79,12 +80,11 @@ from pybricks.robotics import DriveBase
 
 
 """
-Next, we use the above this code initializes our hub, create motor objects,
-and create a DriveBase object.   We will make calls on these objects
-to control the bot.
+Next, this code initializes our hub, create motor objects, and creates a
+DriveBase object.   We will make calls on these objects to control the bot.
 
-Notice that to create the Motors, we need to provide the port
-they are plugged into.  TODO: rotation direction
+Notice that to create the a Motor, we need to provide the port
+it is plugged into.  TODO: rotation direction
 """
 
 PrimeHub()
@@ -137,7 +137,8 @@ Now let's control an arm motor.
 
 arm = Motor(port=Port.C)
 
-print(f"initial value from arm.angle: {arm.angle()}")
+angle = arm.angle()
+print(f"initial value from arm.angle: {angle}")
 arm.run_angle(speed=100, rotation_angle=25)
 print(f"new value from arm.angle: {arm.angle()}")
 
