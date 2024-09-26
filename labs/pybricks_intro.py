@@ -66,7 +66,6 @@ generate errors.   Comment them out again afterwards.
 # print(2 * "tu")
 
 
-
 """
 OK, now it's time to make the bot move.
 
@@ -154,6 +153,5 @@ What if Motor.run_target didn't exist?  Can you write
 code using Motor.angle and Motor.run_angle that will
 do the same thing as Motor.run_target?
 """
-
 
 

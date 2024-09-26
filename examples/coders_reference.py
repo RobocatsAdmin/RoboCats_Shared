@@ -32,7 +32,7 @@ if my_none is None or my_none is not None:
     pass
 if my_str == "Hello, world!" or my_str != "Hello, world!":
     pass
-if my_int == 3 or my_int != 3 or my_int < 3 or my_int > 3:
+if my_int == 3 or my_int != 3 or my_int < 3 or my_int > 3 or my_int >= 3 or my_int <= 3:
     pass
 if my_bool is True or my_bool is not True or my_bool is False:
     pass
@@ -91,8 +91,13 @@ else:                       # else is also optional, and is executed only if not
 while loops
 """
 i = 1
-while i < 6:
-    i = i + 1               # Will do this until i == 6
+while i < 6:                # Run the indented code block until i >= 6.
+    if dont_add_this_time:
+        continue            # jump to the next iteration of the loop
+    elif all_done:
+        break               # breaks out of the loop
+    i = i + 1
+
 
 numbers_to_add = [1, 2, 3, 4]
 total = 0
@@ -132,7 +137,7 @@ return_val = takes_multiple_inputs(1)
 return_val = takes_multiple_inputs(1, optional_arg2=5)
 
 """
-Robotics
+Robotics - https://docs.pybricks.com
 """
 
 from pybricks.hubs import PrimeHub
@@ -142,7 +147,8 @@ from pybricks.parameters import Port, Stop, Direction
 
 PrimeHub()
 right_wheel = Motor(port=Port.A)
-left_wheel = Motor(port=Port.B, positive_direction=Direction.COUNTERCLOCKWISE)
+left_wheel = Motor(port=Port.B,
+                   positive_direction=Direction.COUNTERCLOCKWISE)
 base = DriveBase(left_motor=left_wheel,
                  right_motor=right_wheel,
                  wheel_diameter=TODO,
@@ -160,5 +166,3 @@ arm.run_target(speed=100, target_angle=0)
 stalled_angle = arm.run_until_stalled(300, duty_limit=10)
 
 stop_constants = [Stop.HOLD, Stop.BRAKE, Stop.COAST, Stop.COAST_SMART]
-
-# https://docs.pybricks.com
