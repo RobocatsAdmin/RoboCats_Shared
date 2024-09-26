@@ -125,7 +125,7 @@ return_val = takes_one_input(3)
 
 
 def takes_multiple_inputs(required_arg, optional_arg=None, optional_arg2=0):
-    return(f"required_arg = {required_arg}, optional_arg = {optional_arg}, optional_arg2 = {optional_arg2}")
+    return f"required_arg = {required_arg}, optional_arg = {optional_arg}, optional_arg2 = {optional_arg2}"
 
 
 return_val = takes_multiple_inputs(1)
