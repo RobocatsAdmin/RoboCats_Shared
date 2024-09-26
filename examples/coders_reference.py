@@ -2,7 +2,7 @@
 printing
 """
 
-message = my_str
+message = "Hello, world!"
 print(message)
 print("multiple", " different", "arguments and ", message)
 print(f"Use an f-string with braces around variables or function calls: {message}")
