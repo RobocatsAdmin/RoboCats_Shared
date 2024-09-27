@@ -141,7 +141,9 @@ Now let's control an arm motor.
 
 # angle = arm.angle()
 # print(f"initial value from arm.angle: {angle}")
+
 # arm.run_angle(speed=100, rotation_angle=25)
+
 # print(f"new value from arm.angle: {arm.angle()}")
 
 
