@@ -83,8 +83,10 @@ from pybricks.robotics import DriveBase
 Next, this code initializes our hub, create motor objects, and creates a
 DriveBase object.   We will make calls on these objects to control the bot.
 
-Notice that to create a Motor, we need to provide the port
-it is plugged into.
+To create a Motor, we need to provide the port it is plugged into, and 
+which direction the motor's positive direction is.  The drive base needs 
+to know the wheel diameter and distance between the wheels, so that it 
+knows how to drive and turn a specific amount.
 """
 
 PrimeHub()
