@@ -95,8 +95,8 @@ left_wheel = Motor(port=Port.B,
                    positive_direction=Direction.COUNTERCLOCKWISE)
 base = DriveBase(left_motor=left_wheel,
                  right_motor=right_wheel,
-                 wheel_diameter=TODO,
-                 axle_track=TODO)
+                 wheel_diameter=57,
+                 axle_track=80)
 
 
 """
@@ -146,7 +146,10 @@ Now let's control an arm motor.
 
 
 """
-What is the difference between this run_target method and run_angle?
+What is the difference between run_target and run_angle? 
+
+Check out this page: https://docs.pybricks.com/en/stable/pupdevices/motor.html
+
 """
 # arm.run_target(speed=100, target_angle=0)
 
@@ -158,5 +161,4 @@ What if Motor.run_target didn't exist?  Can you write
 code using Motor.angle and Motor.run_angle that will
 do the same thing as Motor.run_target?
 """
-
 
