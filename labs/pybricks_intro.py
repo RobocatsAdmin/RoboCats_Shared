@@ -22,7 +22,6 @@ arguments must be in parenthesis to show that they belong to the function call.
 # print("Hello, world!")
 
 """
-
 Play with the examples below one at a time, as some will produce
 errors.  Re-comment each one after trying it.
 """
@@ -57,13 +56,15 @@ generate errors.   Comment them out again afterwards.
 # print(f"this is another number: {another_number}")
 
 # another_number = another_number * 2
-# printf(f"this is another number again, but different: {another_number}")
+# printf(f"we updated the variable, and now it is: {another_number}")
 
 # printf(another_number / 3)
 
+# print 5 + 7
 # print(5 + "7")
+# print(5 + int("7"))
 
-# print(2 * "tu")
+# print(5 * "five")
 
 
 """
@@ -74,7 +75,7 @@ The lines below tell python to load the pybricks code our program needs.
 
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
+from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 
 
@@ -82,13 +83,14 @@ from pybricks.robotics import DriveBase
 Next, this code initializes our hub, create motor objects, and creates a
 DriveBase object.   We will make calls on these objects to control the bot.
 
-Notice that to create the a Motor, we need to provide the port
-it is plugged into.  TODO: rotation direction
+Notice that to create a Motor, we need to provide the port
+it is plugged into.
 """
 
 PrimeHub()
 right_wheel = Motor(port=Port.A)
-left_wheel = Motor(port=Port.B)
+left_wheel = Motor(port=Port.B,
+                   positive_direction=Direction.COUNTERCLOCKWISE)
 base = DriveBase(left_motor=left_wheel,
                  right_motor=right_wheel,
                  wheel_diameter=TODO,
@@ -120,8 +122,8 @@ Hint: You'll need a for loop to iterate a certain number of times.
       The code examples below should be enough to get you started.
 """
 
-# start_at=0
-# stop_before=9
+# start_at = 0
+# stop_before = 9
 # print(range(start_at, stop_before))
 
 # numbers = [1, 2,3]
@@ -131,22 +133,23 @@ Hint: You'll need a for loop to iterate a certain number of times.
 
 """
 Now let's control an arm motor.
-
 """
 
-arm = Motor(port=Port.C)
+# arm = Motor(port=Port.C)
 
-angle = arm.angle()
-print(f"initial value from arm.angle: {angle}")
-arm.run_angle(speed=100, rotation_angle=25)
-print(f"new value from arm.angle: {arm.angle()}")
+# angle = arm.angle()
+# print(f"initial value from arm.angle: {angle}")
+# arm.run_angle(speed=100, rotation_angle=25)
+# print(f"new value from arm.angle: {arm.angle()}")
 
 
 """
-This method will move the motor to a specific angle.
+What is the difference between this run_target method and run_angle?
 """
-arm.run_target(speed=100, target_angle=0)
+# arm.run_target(speed=100, target_angle=0)
 
+
+# check the docs
 
 """
 What if Motor.run_target didn't exist?  Can you write 
