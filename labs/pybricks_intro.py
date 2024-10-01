@@ -4,7 +4,7 @@
 Blocks of text like this (surrounded by triple-quotes) are called comments.
 They do not affect how the program behaves.  In this file, they wil contain
 instructions, explanations, and other useful info.
- 
+
 The lines below are also comments, because they start with a # sign.
 When you see these, un-comment them to try out the example code.
 """
@@ -22,14 +22,14 @@ arguments must be in parenthesis to show that they belong to the function call.
 # print("Hello, world!")
 
 """
-Play with the examples below one at a time, as some will produce
-errors.  Re-comment each one after trying it.
+The placement of quotes and parenthesis are important.  Try the following
+to see what can happen when there is a 'syntax error'.  Try them one at 
+a time and re-comment them afterwards.
 """
 
-# print("What happens if the quotes are wrong)
-# print("What if the parens are wrong?"
-# print("What if we used "quotes" inside the string")
-# print("What", "if", "there", "are multiple arguments?")
+# print("What happens if a quote is missing)
+
+# print("What if the parens are wrong?)"
 
 """
 Programs can store information in named variables, and then pass those
@@ -56,15 +56,9 @@ generate errors.   Comment them out again afterwards.
 # print(f"this is another number: {another_number}")
 
 # another_number = another_number * 2
-# printf(f"we updated the variable, and now it is: {another_number}")
+# print(f"we updated the variable, and now it is: {another_number}")
 
-# printf(another_number / 3)
-
-# print 5 + 7
-# print(5 + "7")
-# print(5 + int("7"))
-
-# print(5 * "five")
+# print(another_number / 3)
 
 
 """
@@ -77,7 +71,6 @@ from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor
 from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
-
 
 """
 Next, this code initializes our hub, create motor objects, and creates a
@@ -96,8 +89,7 @@ left_wheel = Motor(port=Port.B,
 base = DriveBase(left_motor=left_wheel,
                  right_motor=right_wheel,
                  wheel_diameter=57,
-                 axle_track=80)
-
+                 axle_track=82)
 
 """
 With our setup out of the way, driving the bot is easy.  Methods
@@ -106,17 +98,14 @@ on the DriveBase object can make the bot move and turn.
 
 # base.straight(distance=200)
 
-# base.turn(angle=35)
+# base.turn(angle=90)
 
-# base.curve(radius=100, angle=35)
+# base.curve(radius=150, angle=90)
 
 """
 Can you make the bot move in a square path, back to where
 it started?  Try it.
 """
-
-
-
 
 """
 What if you wanted it to drive in a hexagon or octagon shape?
@@ -142,7 +131,7 @@ Now let's control an arm motor.
 # angle = arm.angle()
 # print(f"initial value from arm.angle: {angle}")
 
-# arm.run_angle(speed=100, rotation_angle=25)
+# arm.run_angle(speed=100, rotation_angle=60)
 
 # print(f"new value from arm.angle: {arm.angle()}")
 
@@ -155,8 +144,6 @@ Check out this page: https://docs.pybricks.com/en/stable/pupdevices/motor.html
 """
 # arm.run_target(speed=100, target_angle=0)
 
-
-# check the docs
 
 """
 What if Motor.run_target didn't exist?  Can you write 
